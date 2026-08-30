@@ -66,7 +66,6 @@ function doPost(e) {
     const branch = String(data.branch || "").trim();
     const domain1 = String(data.domain1 || "").trim();
     const domain2 = String(data.domain2 || "").trim();
-    const domain3 = String(data.domain3 || "").trim();
     const githubUrl = String(data.githubUrl || "N/A").trim();
     const resumeLink = String(data.resumeLink || "").trim();
     const motivation = String(data.motivation || "").trim();
@@ -132,6 +131,13 @@ function doPost(e) {
         .setBackground("#1a1815")
         .setFontColor("#ffffff");
       sheet.setFrozenRows(1);
+    } else {
+      // Auto-cleanup: If sheet still has the old '3rd Domain Preference' column header, delete that column automatically
+      const currentHeaders = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+      const thirdColIdx = currentHeaders.indexOf("3rd Domain Preference");
+      if (thirdColIdx !== -1) {
+        sheet.deleteColumn(thirdColIdx + 1);
+      }
     }
 
     // 4. Generate Sequential Unique Application ID (AC2627-0001, AC2627-0002, ...)
