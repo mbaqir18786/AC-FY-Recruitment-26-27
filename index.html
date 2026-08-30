@@ -257,12 +257,12 @@
         /* ── EDITORIAL PERKS ── */
         .perks-head {
             font-family: var(--mono);
-            font-size: 9.5px;
+            font-size: 11px;
             font-weight: 600;
             letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: var(--red);
-            margin: 28px 0 4px;
+            color: #d1b8e0;
+            margin: 32px 0 6px;
         }
 
         .perks-editorial {
@@ -320,12 +320,12 @@
 
         .pe-label {
             font-family: var(--mono);
-            font-size: 8.5px;
+            font-size: 10px;
             font-weight: 600;
-            letter-spacing: 0.18em;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
-            color: var(--red);
-            opacity: 0.8;
+            color: #b082cc;
+            opacity: 1;
         }
 
         .pe-title {
@@ -775,12 +775,27 @@
             border-bottom: none;
         }
 
+        .query-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
         .query-name {
             font-family: var(--sans);
             font-size: 14px;
             font-weight: 500;
-            color: var(--ink-dim);
+            color: #ffffff;
             letter-spacing: 0.02em;
+        }
+
+        .query-role {
+            font-family: var(--mono);
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--red-light);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .query-phone {
@@ -1137,8 +1152,7 @@
                         <div class="pe-body">
                             <span class="pe-label">Network</span>
                             <span class="pe-title">People you&rsquo;d never meet otherwise</span>
-                            <p class="pe-desc">Talk to founders and KJSSE alumni running big companies &mdash; face to
-                                face, not a LinkedIn message that goes unanswered.</p>
+                            <p class="pe-desc">Direct face-to-face connects with founders and alumni leaders.</p>
                         </div>
                     </div>
                     <div class="pe-row">
@@ -1146,8 +1160,7 @@
                         <div class="pe-body">
                             <span class="pe-label">Skill</span>
                             <span class="pe-title">Learn by doing, not by waiting</span>
-                            <p class="pe-desc">Run real events from semester one. No four-year wait &mdash; you&rsquo;re
-                                driving decisions from day one.</p>
+                            <p class="pe-desc">Lead and manage flagship college events from semester one.</p>
                         </div>
                     </div>
                     <div class="pe-row">
@@ -1155,8 +1168,7 @@
                         <div class="pe-body">
                             <span class="pe-label">LOA</span>
                             <span class="pe-title">A letter that actually means something</span>
-                            <p class="pe-desc">Every contribution earns a Letter of Appreciation &mdash; a real record
-                                of what you built, not just a certificate.</p>
+                            <p class="pe-desc">Official Letter of Appreciation verifying your real contribution.</p>
                         </div>
                     </div>
                 </div>
@@ -1369,15 +1381,24 @@
 
             <div class="block">
                 <div class="query-row rev">
-                    <span class="query-name">Aryan</span>
+                    <div class="query-info">
+                        <span class="query-name">Aryan Shah</span>
+                        <span class="query-role">Gen Sec</span>
+                    </div>
                     <a href="tel:+919724469666" class="query-phone">+91 97244 69666</a>
                 </div>
                 <div class="query-row rev">
-                    <span class="query-name">Abhinay</span>
+                    <div class="query-info">
+                        <span class="query-name">Abhinay Pande</span>
+                        <span class="query-role">Jt. Gen Sec</span>
+                    </div>
                     <a href="tel:+919172142389" class="query-phone">+91 91721 42389</a>
                 </div>
                 <div class="query-row rev">
-                    <span class="query-name">Rohan</span>
+                    <div class="query-info">
+                        <span class="query-name">Rohan Kendre</span>
+                        <span class="query-role">Jt. Gen Sec</span>
+                    </div>
                     <a href="tel:+919011359990" class="query-phone">+91 90113 59990</a>
                 </div>
             </div>
