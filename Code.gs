@@ -135,29 +135,8 @@ function doPost(e) {
       sheet.setFrozenRows(1);
     }
 
-    // 4. Duplicate Check (Check existing emails and roll numbers)
+    // 4. Generate Sequential Unique Application ID (AC2627-0001, AC2627-0002, ...)
     const lastRow = sheet.getLastRow();
-    if (lastRow > 1) {
-      // Read all existing rows starting from row 2
-      const existingData = sheet.getRange(2, 1, lastRow - 1, 5).getValues();
-      
-      for (let i = 0; i < existingData.length; i++) {
-        const rowAppId = String(existingData[i][1] || "");
-        const rowRoll = String(existingData[i][3] || "").trim().toLowerCase();
-        const rowEmail = String(existingData[i][4] || "").trim().toLowerCase();
-
-        if (rowEmail === email || rowRoll === rollNumber.toLowerCase()) {
-          return createJsonResponse({
-            success: false,
-            duplicate: true,
-            applicationId: rowAppId.replace(/^#/, ""),
-            message: "You have already registered for Alumni Cell FY Recruitment 2026–27."
-          });
-        }
-      }
-    }
-
-    // 5. Generate Sequential Unique Application ID (AC2627-0001, AC2627-0002, ...)
     const nextSequenceNumber = lastRow; // row 1 is header, so row 2 gets 0001
     const formattedId = ID_PREFIX + String(nextSequenceNumber).padStart(4, "0");
 
