@@ -86,11 +86,11 @@ function doPost(e) {
     if (!branch || branch === "Select branch...") {
       return createJsonResponse({ success: false, message: "Please select a valid branch." });
     }
-    if (!domain1 || !domain2 || !domain3) {
-      return createJsonResponse({ success: false, message: "Exactly 3 domain preferences must be selected." });
+    if (!domain1 || !domain2) {
+      return createJsonResponse({ success: false, message: "Exactly 2 domain preferences must be selected." });
     }
-    if (domain1 === domain2 || domain2 === domain3 || domain1 === domain3) {
-      return createJsonResponse({ success: false, message: "All 3 domain preferences must be unique." });
+    if (domain1 === domain2) {
+      return createJsonResponse({ success: false, message: "Both domain preferences must be unique." });
     }
     if (!resumeLink) {
       return createJsonResponse({ success: false, message: "Google Drive resume link is compulsory." });
@@ -114,7 +114,6 @@ function doPost(e) {
       "Branch",
       "1st Domain Preference",
       "2nd Domain Preference",
-      "3rd Domain Preference",
       "GitHub / Portfolio URL",
       "Resume Drive Link",
       "Motivation"
@@ -155,7 +154,6 @@ function doPost(e) {
       branch,
       domain1,
       domain2,
-      domain3,
       githubUrl,
       resumeLink,
       motivation

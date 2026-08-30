@@ -4,21 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumni Cell Recruitment 2026 | KJSCE</title>
-    <meta name="description" content="Apply for Alumni Cell FY Representative 2026 — KJSCE.">
+    <title>Alumni Cell Recruitment 2026 | KJSSE</title>
+    <meta name="description" content="Apply for Alumni Cell FY Representative 2026 — KJSSE.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=DM+Mono:ital,wght@0,400;1,400&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <style>
         :root {
-            --bg: #0a0907;
-            --surface: #111009;
+            --bg: #080008;
+            --surface: #110011;
             --ink: #ffffff;
-            --ink-dim: #dcd6cd;
-            --ink-lo: #9e968c;
-            --red: #ff334b;
-            --red-bg: rgba(255, 51, 75, 0.15);
+            --ink-dim: #eedded;
+            --ink-lo: #c4a0c4;
+            --red: #A300A3;
+            --red-light: #cc33cc;
+            --red-bg: rgba(163, 0, 163, 0.12);
             --rule: rgba(255, 255, 255, 0.12);
             --serif: 'Instrument Serif', Georgia, serif;
             --hand: 'Caveat', cursive;
@@ -70,22 +71,26 @@
         .bg-video-overlay {
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at center, rgba(10, 9, 7, 0.15) 0%, rgba(10, 9, 7, 0.65) 100%);
+            background: radial-gradient(circle at center, rgba(10, 8, 14, 0.2) 0%, rgba(8, 6, 10, 0.8) 100%);
         }
 
         .canvas {
             max-width: 680px;
             margin: 40px auto;
-            background: rgba(15, 14, 11, 0.68); /* Refined clear background */
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: linear-gradient(to right,
+                    rgba(65, 1, 71, 0.30) 0%,
+                    rgba(48, 2, 52, 0.34) 35%,
+                    rgba(30, 2, 33, 0.38) 70%,
+                    rgba(16, 1, 18, 0.42) 100%);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(163, 0, 163, 0.28);
             border-radius: 18px;
             overflow: hidden;
             box-shadow:
-                0 0 0 1px rgba(0, 0, 0, 0.5),
-                0 25px 60px -10px rgba(0, 0, 0, 0.9),
-                0 0 80px rgba(0, 0, 0, 0.7);
+                0 0 0 1px rgba(0, 0, 0, 0.55),
+                0 28px 70px -12px rgba(0, 0, 0, 0.92),
+                0 0 50px rgba(163, 0, 163, 0.10);
             position: relative;
             z-index: 2;
         }
@@ -111,26 +116,60 @@
 
         /* ── NAMEPLATE ── */
         .nameplate {
-            padding: 36px 44px 28px;
+            padding: 32px 44px 28px;
             border-bottom: 1px solid var(--rule);
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 0;
+        }
+
+        .nameplate-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            margin-bottom: 16px;
+        }
+
+        .nameplate-meta-left,
+        .nameplate-meta-right {
+            font-family: var(--mono);
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--ink-lo);
+        }
+
+        .nameplate-meta-right {
+            color: var(--red-light);
         }
 
         .nameplate-title {
             font-family: var(--serif);
-            font-size: 58px;
+            font-size: 54px;
             font-weight: 400;
             color: #ffffff;
-            line-height: 1.0;
-            letter-spacing: -0.01em;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
         }
 
         .nameplate-title span {
-            color: var(--red);
-            font-style: normal;
+            background: linear-gradient(135deg, #eee6ef 15%, #e475f3 45%, #ee6ffc 75%, #ec6ad0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-style: italic;
+            display: inline-block;
+        }
+
+        .nameplate-sub {
+            font-size: 13.5px;
+            color: var(--ink-dim);
+            line-height: 1.65;
+            max-width: 520px;
         }
 
         /* ── SECTION HEADER ── */
@@ -178,13 +217,12 @@
         }
 
         .body-text {
-            font-size: 14px;
+            font-size: 13.5px;
             color: var(--ink-dim);
-            line-height: 1.85;
+            line-height: 1.8;
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+            gap: 14px;
         }
 
         .body-text strong {
@@ -192,7 +230,7 @@
             font-weight: 600;
         }
 
-        /* ── PERKS ── */
+        /* ── EDITORIAL PERKS ── */
         .perks-head {
             font-family: var(--mono);
             font-size: 9.5px;
@@ -200,40 +238,83 @@
             letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--red);
-            margin: 24px 0 12px;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+            margin: 28px 0 4px;
         }
 
-        .perk {
+        .perks-editorial {
             display: flex;
-            gap: 14px;
-            padding: 12px 0;
-            border-top: 1px solid var(--rule);
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .pe-row {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            align-items: start;
+            gap: 0 0;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            transition: background 0.18s;
+            cursor: default;
+        }
+
+        .pe-row:first-child {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .pe-row:hover {
+            background: rgba(163, 0, 163, 0.05);
+        }
+
+        .pe-num {
+            font-family: var(--serif);
+            font-size: 52px;
+            font-weight: 400;
+            color: rgba(163, 0, 163, 0.22);
+            line-height: 1;
+            letter-spacing: -0.03em;
+            padding-top: 2px;
             transition: color 0.2s;
+            user-select: none;
         }
 
-        .perk:last-of-type {
-            border-bottom: 1px solid var(--rule);
+        .pe-row:hover .pe-num {
+            color: rgba(163, 0, 163, 0.42);
         }
 
-        .perk:hover .perk-t {
-            color: #ffffff;
+        .pe-body {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            padding-left: 10px;
         }
 
-        .perk-n {
+        .pe-label {
             font-family: var(--mono);
-            font-size: 9.5px;
-            color: var(--red);
+            font-size: 8.5px;
             font-weight: 600;
-            flex-shrink: 0;
-            padding-top: 3px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--red);
+            opacity: 0.8;
         }
 
-        .perk-t {
-            font-size: 13.5px;
+        .pe-title {
+            font-family: var(--serif);
+            font-size: 26px;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .pe-desc {
+            font-size: 12.5px;
             color: var(--ink-dim);
-            line-height: 1.7;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+            line-height: 1.6;
+            max-width: 380px;
+            margin-top: 2px;
         }
 
         /* ── CLOSING / RnR ── */
@@ -247,23 +328,30 @@
         }
 
         .rnr-link {
-            display: inline-block;
-            margin-top: 16px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 18px;
             font-family: var(--mono);
-            font-size: 9.5px;
-            font-weight: 500;
-            letter-spacing: 0.14em;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--red);
+            color: #ffffff;
+            background: rgba(163, 0, 163, 0.24);
+            border: 1px solid rgba(238, 136, 238, 0.45);
+            padding: 10px 18px;
+            border-radius: 6px;
             text-decoration: none;
-            border-bottom: 1.5px solid var(--red);
-            padding-bottom: 2px;
-            transition: opacity 0.18s;
-            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .rnr-link:hover {
-            opacity: 0.75;
+            background: rgba(163, 0, 163, 0.45);
+            border-color: rgba(255, 170, 255, 0.7);
+            color: #ffffff;
+            transform: translateX(2px);
         }
 
 
@@ -293,6 +381,7 @@
 
         .field {
             margin-bottom: 24px;
+            position: relative;
         }
 
         .field label {
@@ -333,7 +422,101 @@
         .field select:focus,
         .field textarea:focus {
             border-bottom-color: var(--red);
-            background: rgba(255, 51, 75, 0.05);
+            background: rgba(163, 0, 163, 0.07);
+            box-shadow: 0 2px 8px rgba(163, 0, 163, 0.12);
+        }
+
+        /* ── INLINE VALIDATION STYLES ── */
+        .field.has-error input,
+        .field.has-error select,
+        .field.has-error textarea {
+            border-bottom-color: #f43f5e !important;
+            background: rgba(244, 63, 94, 0.08) !important;
+        }
+
+        .field-error-text {
+            display: none;
+            font-family: var(--mono);
+            font-size: 11px;
+            font-weight: 500;
+            color: #fb7185;
+            margin-top: 6px;
+            letter-spacing: 0.03em;
+            animation: fadeInErr 0.2s ease;
+        }
+
+        .field.has-error .field-error-text {
+            display: block;
+        }
+
+        .dom-max-toast {
+            display: inline-block;
+            font-family: var(--mono);
+            font-size: 9.5px;
+            font-weight: 600;
+            color: #fb7185;
+            margin-left: 10px;
+            opacity: 0;
+            transform: translateX(4px);
+            transition: opacity 0.22s ease, transform 0.22s ease;
+        }
+
+        .dom-max-toast.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .dom-error-msg {
+            display: none;
+            font-family: var(--mono);
+            font-size: 11px;
+            font-weight: 600;
+            color: #fb7185;
+            background: rgba(244, 63, 94, 0.1);
+            border: 1px solid rgba(244, 63, 94, 0.3);
+            border-radius: 4px;
+            padding: 9px 14px;
+            margin-top: -14px;
+            margin-bottom: 22px;
+            animation: fadeInErr 0.2s ease;
+        }
+
+        .form-global-banner {
+            display: none;
+            font-family: var(--mono);
+            font-size: 12px;
+            line-height: 1.55;
+            padding: 13px 16px;
+            border-radius: 6px;
+            margin-top: 12px;
+            margin-bottom: 8px;
+            animation: fadeInErr 0.25s ease;
+        }
+
+        .form-global-banner.error {
+            display: block;
+            background: rgba(244, 63, 94, 0.14);
+            border: 1px solid rgba(244, 63, 94, 0.45);
+            color: #ffe4e6;
+        }
+
+        .form-global-banner.warning {
+            display: block;
+            background: rgba(245, 158, 11, 0.14);
+            border: 1px solid rgba(245, 158, 11, 0.45);
+            color: #fef3c7;
+        }
+
+        @keyframes fadeInErr {
+            from {
+                opacity: 0;
+                transform: translateY(-4px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .field input::placeholder,
@@ -427,7 +610,7 @@
 
         .dom-card:hover {
             border-color: rgba(255, 255, 255, 0.3);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.03);
         }
 
         .dom-card.selected {
@@ -469,27 +652,67 @@
 
         /* ── SUBMIT ── */
         .btn-submit {
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             width: 100%;
-            background: var(--red);
+            background: #7a007a;
             color: #ffffff;
             font-family: var(--mono);
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 600;
-            letter-spacing: 0.22em;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            padding: 16px;
-            border: none;
-            border-radius: 4px;
+            padding: 16px 20px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 6px;
             cursor: pointer;
-            margin-top: 8px;
-            box-shadow: 0 4px 15px rgba(255, 51, 75, 0.3);
-            transition: opacity 0.18s, transform 0.18s;
+            margin-top: 14px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+            transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+        }
+
+        .btn-submit .btn-arrow {
+            display: inline-block;
+            font-size: 14px;
+            line-height: 1;
+            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn-submit:hover {
-            opacity: 0.9;
-            transform: translateY(-1px);
+            background: #910091;
+            border-color: rgba(255, 255, 255, 0.35);
+            letter-spacing: 0.24em;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            transform: translateY(-1.5px);
+        }
+
+        .btn-submit:hover::before {
+            left: 100%;
+        }
+
+        .btn-submit:hover .btn-arrow {
+            transform: translateX(4px);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
         }
 
         /* ── QUERIES ── */
@@ -619,8 +842,15 @@
         }
 
         @keyframes fadeInSuccess {
-            from { opacity: 0; transform: translateY(16px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .success-icon-wrap {
@@ -661,13 +891,13 @@
         }
 
         .success-card {
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(18, 12, 30, 0.65);
+            border: 1px solid rgba(192, 132, 252, 0.25);
             border-radius: 8px;
             padding: 22px 24px;
             text-align: left;
             margin-bottom: 22px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 30px rgba(157, 78, 221, 0.12);
         }
 
         .success-card-header {
@@ -761,8 +991,8 @@
         }
 
         .success-footer-note {
-            background: rgba(255, 51, 75, 0.08);
-            border: 1px solid rgba(255, 51, 75, 0.22);
+            background: rgba(157, 78, 221, 0.1);
+            border: 1px solid rgba(192, 132, 252, 0.28);
             border-radius: 6px;
             padding: 12px 16px;
             font-size: 12.5px;
@@ -815,7 +1045,7 @@
     <!-- Background Video Outside Container -->
     <div class="bg-video-wrapper">
         <video autoplay muted loop playsinline id="bgVideo">
-            <source src="./red-grid01" type="video/mp4">
+            <source src="./297873.mp4" type="video/mp4">
         </video>
         <div class="bg-video-overlay"></div>
     </div>
@@ -823,43 +1053,65 @@
     <div class="canvas">
 
         <div class="banner">
-            <img src="./finalogo.png" alt="Alumni Cell KJSCE Banner">
+            <img src="./finalogo.png" alt="Alumni Cell KJSSE Banner">
         </div>
 
         <div class="nameplate rev">
-            <div class="nameplate-title">Recruiting <span>FY Reps</span></div>
+            <div class="nameplate-meta">
+                <span class="nameplate-meta-left">Alumni Cell &bull; KJSSE</span>
+                <span class="nameplate-meta-right">Applications Open &bull; 2026&ndash;27</span>
+            </div>
+            <div class="nameplate-title">
+                Recruiting <span>FY Representatives</span>
+            </div>
+            <p class="nameplate-sub">Applications are open for first-year students to join the Alumni Cell council. Work directly with our alumni network, lead flagship initiatives, and represent your batch from semester one.</p>
         </div>
 
         <div class="sec rev">
             <span class="sec-n">01 /</span>
-            <span class="sec-t">Official Announcement</span>
+            <span class="sec-t">About Alumni Cell</span>
         </div>
 
 
         <div class="block">
             <div class="body-text rev">
-                <p><strong>Greetings from the Alumni Cell!</strong></p>
-                <p>The Alumni Cell is a student-centric body of the college that works hand in hand with the alumni of
-                    KJSCE. We, at Alumni Cell, constantly strive to expand our thriving alumni network that extends
-                    worldwide to enable them to become a pivotal part of the experiential learning curve which is
-                    essential for every student.</p>
+                <p>Alumni Cell is a student-run body at KJSSE that manages the college&rsquo;s alumni network. We
+                    organise meets, facilitate mentorship connects, and run events where seniors who&rsquo;ve already
+                    been through placements, internships, and first jobs come back and sit down with you.</p>
+                <p>It&rsquo;s not a glamorous pitch. We just think the gap between current students and working alumni
+                    shouldn&rsquo;t exist, and we do the work to close it.</p>
             </div>
 
-            <p class="perks-head rev">Perks of joining the Council</p>
+            <p class="perks-head rev">The First-Year Advantage</p>
 
-            <div class="perk rev">
-                <span class="perk-n">01 /</span>
-                <span class="perk-t">Letter of Appreciation acknowledged by the council on successful completion of the
-                    given term.</span>
-            </div>
-            <div class="perk rev">
-                <span class="perk-n">02 /</span>
-                <span class="perk-t">An excellent opportunity to network and seek guidance from our alumni.</span>
-            </div>
-            <div class="perk rev">
-                <span class="perk-n">03 /</span>
-                <span class="perk-t">To hone your work craft, analytical and communication skills to the industry
-                    level.</span>
+            <div class="perks-editorial rev">
+                <div class="pe-row">
+                    <span class="pe-num">1</span>
+                    <div class="pe-body">
+                        <span class="pe-label">Access</span>
+                        <span class="pe-title">Rooms you won&rsquo;t find on LinkedIn</span>
+                        <p class="pe-desc">Sit across CXOs, founders, and KJSSE alumni building the world&rsquo;s most
+                            interesting companies. Real conversations, not cold emails.</p>
+                    </div>
+                </div>
+                <div class="pe-row">
+                    <span class="pe-num">2</span>
+                    <div class="pe-body">
+                        <span class="pe-label">Lead</span>
+                        <span class="pe-title">Run the show from semester one</span>
+                        <p class="pe-desc">Don&rsquo;t wait four years to take charge. Drive college-scale events, own
+                            decisions, and build things that outlast your tenure.</p>
+                    </div>
+                </div>
+                <div class="pe-row">
+                    <span class="pe-num">3</span>
+                    <div class="pe-body">
+                        <span class="pe-label">Credential</span>
+                        <span class="pe-title">A proof of work, not just a certificate</span>
+                        <p class="pe-desc">Walk away with a council letter, a story worth telling, and a network that
+                            stays with you far beyond graduation.</p>
+                    </div>
+                </div>
             </div>
 
             <p class="closing rev">We look forward to receiving your application and welcoming you to the Alumni Cell.
@@ -881,31 +1133,34 @@
         <div class="block">
             <div class="form-intro rev">
                 <h2>Apply Now</h2>
-                <p>All fields marked * are required</p>
             </div>
 
-            <form id="recruitmentForm" onsubmit="handleFormSubmit(event)">
+            <form id="recruitmentForm" novalidate onsubmit="handleFormSubmit(event)">
 
                 <div class="grid-2">
-                    <div class="field rev">
+                    <div class="field rev" id="field-fullName">
                         <label>Full Name <span class="req">*</span></label>
-                        <input type="text" id="fullName" name="fullName" required placeholder="Your full name">
+                        <input type="text" id="fullName" name="fullName" placeholder="Your full name">
+                        <span class="field-error-text" id="err-fullName">Please enter your full name.</span>
                     </div>
-                    <div class="field rev">
+                    <div class="field rev" id="field-rollNumber">
                         <label>Roll Number <span class="req">*</span></label>
-                        <input type="text" id="rollNumber" name="rollNumber" required placeholder="e.g. 16010126001">
+                        <input type="text" id="rollNumber" name="rollNumber" placeholder="e.g. 16010126001">
+                        <span class="field-error-text" id="err-rollNumber">Please enter your roll number.</span>
                     </div>
                 </div>
 
                 <div class="grid-2">
-                    <div class="field rev">
+                    <div class="field rev" id="field-email">
                         <label>Somaiya Email <span class="req">*</span></label>
-                        <input type="email" id="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@somaiya\.edu$" title="Must be a valid @somaiya.edu email address" placeholder="your.name@somaiya.edu">
+                        <input type="email" id="email" name="email" placeholder="your.name@somaiya.edu">
+                        <span class="field-error-text" id="err-email">Please enter your official @somaiya.edu email
+                            address.</span>
                     </div>
-                    <div class="field rev">
+                    <div class="field rev" id="field-phone">
                         <label>Contact Number <span class="req">*</span></label>
-                        <input type="tel" id="phone" name="phone" required pattern="[6-9][0-9]{9}"
-                            placeholder="9876543210">
+                        <input type="tel" id="phone" name="phone" placeholder="9876543210">
+                        <span class="field-error-text" id="err-phone">Please enter a valid 10-digit phone number.</span>
                     </div>
                 </div>
 
@@ -916,26 +1171,29 @@
                             <option>1st Year (Freshman)</option>
                         </select>
                     </div>
-                    <div class="field rev">
+                    <div class="field rev" id="field-branch">
                         <label>Branch <span class="req">*</span></label>
-                        <select id="branch" name="branch" required>
+                        <select id="branch" name="branch">
                             <option value="">Select branch...</option>
-                            <option value="COMPS">COMPS &mdash; Computer Engineering</option>
-                            <option value="IT">IT &mdash; Information Technology</option>
-                            <option value="AIDS">AIDS &mdash; AI &amp; Data Science</option>
-                            <option value="CSBS">CSBS &mdash; CS &amp; Business Systems</option>
-                            <option value="CCE">CCE &mdash; Computer &amp; Communication</option>
-                            <option value="CIVIL">CIVIL &mdash; Civil Engineering</option>
-                            <option value="MECH">MECH &mdash; Mechanical Engineering</option>
-                            <option value="RAI">RAI &mdash; Robotics &amp; AI</option>
-                            <option value="VLSI">VLSI &mdash; VLSI Design &amp; Technology</option>
+                            <option value="COMPS">COMPS - Computer Engineering</option>
+                            <option value="IT">IT - Information Technology</option>
+                            <option value="AIDS">AIDS - AI &amp; Data Science</option>
+                            <option value="CSBS">CSBS - CS &amp; Business Systems</option>
+                            <option value="CCE">CCE - Computer &amp; Communication</option>
+                            <option value="CIVIL">CIVIL - Civil Engineering</option>
+                            <option value="MECH">MECH -Mechanical Engineering</option>
+                            <option value="RAI">RAI - Robotics &amp; AI</option>
+                            <option value="VLSI">VLSI - VLSI Design &amp; Technology</option>
                         </select>
+                        <span class="field-error-text" id="err-branch">Please select your branch.</span>
                     </div>
                 </div>
 
                 <div class="dom-hdr rev">
-                    <span class="dom-lbl">Domain Preferences <span style="color:var(--red)">*</span></span>
-                    <span class="dom-cnt" id="domainCounter">0 / 3</span>
+                    <span class="dom-lbl">Domain Preferences <span style="color:var(--red)">*</span> <span
+                            id="domainLimitMsg" class="dom-max-toast">⚠️ Max 2 selected &mdash; click one to
+                            deselect</span></span>
+                    <span class="dom-cnt" id="domainCounter">0 / 2</span>
                 </div>
                 <div class="dom-grid">
                     <div class="dom-card rev" data-domain="Alumni Relations" onclick="toggleDomain(this)">
@@ -947,11 +1205,6 @@
                         <div class="dom-top"><span class="dom-name">PR Team</span><span class="dom-badge">pick</span>
                         </div>
                         <p class="dom-desc">Public Relations, Sponsorships &amp; Media.</p>
-                    </div>
-                    <div class="dom-card rev" data-domain="Technical Team" onclick="toggleDomain(this)">
-                        <div class="dom-top"><span class="dom-name">Technical Team</span><span
-                                class="dom-badge">pick</span></div>
-                        <p class="dom-desc">Web Dev, AI/ML, Cloud &amp; Coding.</p>
                     </div>
                     <div class="dom-card rev" data-domain="Operations Team" onclick="toggleDomain(this)">
                         <div class="dom-top"><span class="dom-name">Operations Team</span><span
@@ -969,34 +1222,47 @@
                         <p class="dom-desc">UI/UX, Graphics &amp; Motion Design.</p>
                     </div>
                 </div>
+                <div id="domainErrorMsg" class="dom-error-msg">⚠️ Please select exactly 2 domain preferences.</div>
 
                 <div class="grid-2">
-                    <div class="field rev">
+                    <div class="field rev" id="field-githubUrl">
                         <label>GitHub / Portfolio URL (Optional)</label>
                         <input type="url" id="githubUrl" name="githubUrl" placeholder="https://github.com/you">
                     </div>
-                    <div class="field rev">
+                    <div class="field rev" id="field-resumeLink">
                         <label>Resume (Drive Link) <span class="req">*</span></label>
-                        <input type="url" id="resumeLink" name="resumeLink" required placeholder="https://drive.google.com/...">
+                        <input type="url" id="resumeLink" name="resumeLink" placeholder="https://drive.google.com/...">
+                        <span class="field-error-text" id="err-resumeLink">Please provide your Google Drive resume
+                            link.</span>
                     </div>
                 </div>
 
-                <div class="field rev">
+                <div class="field rev" id="field-motivation">
                     <label>Why do you want to join? <span class="req">*</span></label>
-                    <textarea id="motivation" name="motivation" required rows="4"
+                    <textarea id="motivation" name="motivation" rows="4"
                         placeholder="Share your motivation..."></textarea>
+                    <span class="field-error-text" id="err-motivation">Please share why you want to join the Alumni
+                        Cell.</span>
                 </div>
 
-                <button type="submit" class="btn-submit rev">Submit Application</button>
+                <div id="formGlobalBanner" class="form-global-banner"></div>
+
+                <button type="submit" class="btn-submit rev">
+                    <span>Submit Application</span>
+                    <span class="btn-arrow">&rarr;</span>
+                </button>
             </form>
 
             <!-- Success Confirmation Screen -->
             <div id="successState" style="display: none;" class="success-box">
                 <div class="success-icon-wrap">
-                    <svg viewBox="0 0 24 24" class="success-icon"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    <svg viewBox="0 0 24 24" class="success-icon">
+                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
+                    </svg>
                 </div>
                 <h2 class="success-title">Application Submitted</h2>
-                <p class="success-subtitle">Thank you! Your application for Alumni Cell FY Recruitment 2026 has been successfully registered.</p>
+                <p class="success-subtitle">Thank you! Your application for Alumni Cell FY Recruitment 2026 has been
+                    successfully registered.</p>
 
                 <div class="success-card">
                     <div class="success-card-header">
@@ -1029,10 +1295,12 @@
                 </div>
 
                 <div class="success-footer-note">
-                    <p>📢 <strong>Next Steps:</strong> Shortlisted candidates will be contacted via their official Somaiya email for the interview rounds.</p>
+                    <p>📢 <strong>Next Steps:</strong> Shortlisted candidates will be contacted via their official
+                        Somaiya email for the interview rounds.</p>
                 </div>
 
-                <button type="button" onclick="resetFormState()" class="btn-resubmit">Submit Another Response &rarr;</button>
+                <button type="button" onclick="resetFormState()" class="btn-resubmit">Submit Another Response
+                    &rarr;</button>
             </div>
         </div>
 
@@ -1057,22 +1325,38 @@
         </div>
 
         <div class="contact-strip rev">
-            <a href="https://www.instagram.com/alumnicell_kjsce/" target="_blank" class="contact-icon-btn btn-instagram" aria-label="Instagram" title="Instagram">
-                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            <a href="https://www.instagram.com/alumnicell_kjsce/" target="_blank" class="contact-icon-btn btn-instagram"
+                aria-label="Instagram" title="Instagram">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                </svg>
             </a>
-            <a href="mailto:alumnicell@kjsce.somaiya.edu" class="contact-icon-btn btn-email" aria-label="Email" title="Email Us">
-                <svg viewBox="0 0 24 24"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l9.518 7.713 9.518-7.713v11.817h-19.036z"/></svg>
+            <a href="mailto:alumnicell@kjsce.somaiya.edu" class="contact-icon-btn btn-email" aria-label="Email"
+                title="Email Us">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l9.518 7.713 9.518-7.713v11.817h-19.036z" />
+                </svg>
             </a>
-            <a href="https://www.linkedin.com/in/alumnicellkjsce/" target="_blank" class="contact-icon-btn btn-linkedin" aria-label="LinkedIn" title="LinkedIn">
-                <svg viewBox="0 0 24 24"><path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/></svg>
+            <a href="https://www.linkedin.com/in/alumnicellkjsce/" target="_blank" class="contact-icon-btn btn-linkedin"
+                aria-label="LinkedIn" title="LinkedIn">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                </svg>
             </a>
-            <a href="https://chat.whatsapp.com/IST9UanxqTv74DKiMdY9eQ?mode=ems_share_c" target="_blank" class="contact-icon-btn btn-whatsapp" aria-label="WhatsApp" title="WhatsApp">
-                <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <a href="https://chat.whatsapp.com/IST9UanxqTv74DKiMdY9eQ?mode=ems_share_c" target="_blank"
+                class="contact-icon-btn btn-whatsapp" aria-label="WhatsApp" title="WhatsApp">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                </svg>
             </a>
         </div>
 
         <div class="footer rev">
-            <span>&copy; 2026 Alumni Cell KJSCE</span>
+            <span>&copy;Alumni Cell KJSSE 2026 </span>
             <span>All Rights Reserved</span>
         </div>
 
@@ -1082,7 +1366,7 @@
         // ⚙️ GOOGLE APPS SCRIPT BACKEND CONFIGURATION
         // =========================================================================
         // Paste your deployed Google Apps Script Web App URL below:
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwkzBRIMbcbo7L6wwk0umM-zhnipHqDm2Pzi9vsEAiFobDs1e2ydzc-1XYLbh2QnmBX/exec";
+        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwLtOtmosP9VGhdu53tOaTKYRwkY-GzXbTDtQx2I4LM_MWYsK76Fb_QKzOCpDMa7SDrMA/exec";
 
         var obs = new IntersectionObserver(function (entries) {
             entries.forEach(function (e, i) {
@@ -1095,23 +1379,81 @@
         document.querySelectorAll('.rev').forEach(function (el) { obs.observe(el); });
 
         var sel = [];
+        var domainLimitTimer = null;
+
         function toggleDomain(c) {
             var n = c.getAttribute('data-domain');
-            if (sel.indexOf(n) !== -1) { sel = sel.filter(function (d) { return d !== n; }); }
-            else { if (sel.length >= 3) { alert('Max 3 selections.'); return; } sel.push(n); }
+            var limitMsg = document.getElementById('domainLimitMsg');
+            var domErr = document.getElementById('domainErrorMsg');
+            if (domErr) domErr.style.display = 'none';
+
+            if (sel.indexOf(n) !== -1) {
+                sel = sel.filter(function (d) { return d !== n; });
+                if (limitMsg) limitMsg.classList.remove('show');
+            } else {
+                if (sel.length >= 2) {
+                    if (limitMsg) {
+                        limitMsg.classList.add('show');
+                        clearTimeout(domainLimitTimer);
+                        domainLimitTimer = setTimeout(function () {
+                            limitMsg.classList.remove('show');
+                        }, 3000);
+                    }
+                    return;
+                }
+                sel.push(n);
+                if (limitMsg) limitMsg.classList.remove('show');
+            }
             renderDom();
         }
+
         function renderDom() {
-            document.getElementById('domainCounter').innerText = sel.length + ' / 3';
+            document.getElementById('domainCounter').innerText = sel.length + ' / 2';
             document.querySelectorAll('.dom-card').forEach(function (c) {
                 var n = c.getAttribute('data-domain'), b = c.querySelector('.dom-badge'), i = sel.indexOf(n);
-                if (i !== -1) { c.classList.add('selected'); b.innerText = ['1st', '2nd', '3rd'][i]; }
+                if (i !== -1) { c.classList.add('selected'); b.innerText = ['1st', '2nd'][i]; }
                 else { c.classList.remove('selected'); b.innerText = 'pick'; }
             });
         }
 
+        // Real-time error dismissal when user types or selects
+        ['fullName', 'rollNumber', 'email', 'phone', 'branch', 'resumeLink', 'motivation'].forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) {
+                el.addEventListener('input', function () {
+                    var parent = document.getElementById('field-' + id);
+                    if (parent) parent.classList.remove('has-error');
+                    var globalBanner = document.getElementById('formGlobalBanner');
+                    if (globalBanner) globalBanner.style.display = 'none';
+                });
+                el.addEventListener('change', function () {
+                    var parent = document.getElementById('field-' + id);
+                    if (parent) parent.classList.remove('has-error');
+                });
+            }
+        });
+
+        function showFieldError(fieldId, errorMsg) {
+            var fieldWrapper = document.getElementById('field-' + fieldId);
+            var errSpan = document.getElementById('err-' + fieldId);
+            if (fieldWrapper) fieldWrapper.classList.add('has-error');
+            if (errSpan && errorMsg) errSpan.innerText = errorMsg;
+        }
+
+        function clearAllErrors() {
+            document.querySelectorAll('.field').forEach(function (f) { f.classList.remove('has-error'); });
+            var domErr = document.getElementById('domainErrorMsg');
+            if (domErr) domErr.style.display = 'none';
+            var globalBanner = document.getElementById('formGlobalBanner');
+            if (globalBanner) {
+                globalBanner.style.display = 'none';
+                globalBanner.className = 'form-global-banner';
+            }
+        }
+
         async function handleFormSubmit(e) {
             e.preventDefault();
+            clearAllErrors();
 
             var submitBtn = document.querySelector('.btn-submit');
             var fullName = document.getElementById('fullName').value.trim();
@@ -1119,28 +1461,104 @@
             var email = document.getElementById('email').value.trim();
             var phone = document.getElementById('phone').value.trim();
             var branchSelect = document.getElementById('branch');
+            var branchVal = branchSelect.value;
             var branchText = branchSelect.options[branchSelect.selectedIndex].text;
             var githubUrl = document.getElementById('githubUrl').value.trim();
             var resumeLink = document.getElementById('resumeLink').value.trim();
             var motivation = document.getElementById('motivation').value.trim();
+            var globalBanner = document.getElementById('formGlobalBanner');
 
-            // Client Validation
-            if (!email.toLowerCase().endsWith('@somaiya.edu')) {
-                alert('⚠️ Access Restricted:\nPlease enter your official Somaiya email address (@somaiya.edu).');
-                return;
+            var hasError = false;
+            var firstInvalidEl = null;
+
+            // 1. Validate Full Name
+            if (!fullName) {
+                showFieldError('fullName', 'Please enter your full name.');
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = document.getElementById('fullName');
             }
-            if (sel.length !== 3) { 
-                alert('Please select exactly 3 domain preferences.'); 
-                return; 
+
+            // 2. Validate Roll Number
+            if (!rollNumber) {
+                showFieldError('rollNumber', 'Please enter your college roll number.');
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = document.getElementById('rollNumber');
             }
+
+            // 3. Validate Somaiya Email
+            if (!email) {
+                showFieldError('email', 'Please enter your Somaiya email address.');
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = document.getElementById('email');
+            } else if (!email.toLowerCase().endsWith('@somaiya.edu')) {
+                showFieldError('email', 'Access Restricted: Must be an official @somaiya.edu email.');
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = document.getElementById('email');
+            }
+
+            // 4. Validate Phone (10 digits)
+            if (!phone) {
+                showFieldError('phone', 'Please enter your contact number.');
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = document.getElementById('phone');
+            } else if (!/^[6-9]\d{9}$/.test(phone)) {
+                showFieldError('phone', 'Please enter a valid 10-digit Indian mobile number.');
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = document.getElementById('phone');
+            }
+
+            // 5. Validate Branch
+            if (!branchVal) {
+                showFieldError('branch', 'Please select your branch.');
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = branchSelect;
+            }
+
+            // 6. Validate Domain Preferences (exactly 2)
+            if (sel.length !== 2) {
+                var domErr = document.getElementById('domainErrorMsg');
+                if (domErr) {
+                    domErr.innerText = '⚠️ Please select exactly 2 domain preferences (currently selected: ' + sel.length + '/2).';
+                    domErr.style.display = 'block';
+                }
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = document.querySelector('.dom-hdr');
+            }
+
+            // 7. Validate Resume Link
             if (!resumeLink) {
-                alert('Please provide your Google Drive resume link.');
+                showFieldError('resumeLink', 'Please provide your Google Drive resume link.');
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = document.getElementById('resumeLink');
+            } else if (!resumeLink.startsWith('http://') && !resumeLink.startsWith('https://')) {
+                showFieldError('resumeLink', 'Please enter a valid URL starting with https://');
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = document.getElementById('resumeLink');
+            }
+
+            // 8. Validate Motivation
+            if (!motivation) {
+                showFieldError('motivation', 'Please share why you want to join the Alumni Cell.');
+                hasError = true;
+                if (!firstInvalidEl) firstInvalidEl = document.getElementById('motivation');
+            }
+
+            // If validation errors exist, scroll to first error and abort
+            if (hasError) {
+                if (firstInvalidEl) {
+                    firstInvalidEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    if (typeof firstInvalidEl.focus === 'function') firstInvalidEl.focus();
+                }
                 return;
             }
 
             // Check if backend URL is configured
             if (!GOOGLE_SCRIPT_URL || GOOGLE_SCRIPT_URL === "PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE") {
-                alert('⚙️ Backend Notice:\n\nGoogle Apps Script Web App URL is not configured yet.\n\nPlease follow the setup guide to deploy Code.gs and paste the Web App URL into GOOGLE_SCRIPT_URL in index.html.');
+                if (globalBanner) {
+                    globalBanner.className = 'form-global-banner warning';
+                    globalBanner.innerHTML = '⚙️ <strong>Backend Configuration Notice:</strong> Google Apps Script URL is not set yet in index.html.';
+                    globalBanner.style.display = 'block';
+                }
                 return;
             }
 
@@ -1148,7 +1566,7 @@
             submitBtn.disabled = true;
             submitBtn.style.opacity = '0.7';
             submitBtn.style.cursor = 'not-allowed';
-            submitBtn.innerText = 'SUBMITTING APPLICATION...';
+            submitBtn.innerHTML = '<span>SUBMITTING APPLICATION...</span>';
 
             var payload = {
                 fullName: fullName,
@@ -1159,14 +1577,13 @@
                 branch: branchText,
                 domain1: sel[0],
                 domain2: sel[1],
-                domain3: sel[2],
+                domain3: "N/A",
                 githubUrl: githubUrl || "N/A",
                 resumeLink: resumeLink,
                 motivation: motivation
             };
 
             try {
-                // Using text/plain prevents CORS preflight issues with Google Apps Script
                 var response = await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -1185,8 +1602,8 @@
 
                     var prefsContainer = document.getElementById('resPrefs');
                     prefsContainer.innerHTML = '';
-                    sel.forEach(function(domainName, index) {
-                        var order = ['1st Preference', '2nd Preference', '3rd Preference'][index];
+                    sel.forEach(function (domainName, index) {
+                        var order = ['1st Preference', '2nd Preference'][index] || ('Preference ' + (index + 1));
                         var pill = document.createElement('div');
                         pill.className = 'success-pref-pill';
                         pill.innerHTML = '<span>' + order + ':</span> ' + domainName;
@@ -1200,26 +1617,30 @@
 
                     // Smooth scroll into confirmation
                     document.getElementById('successState').scrollIntoView({ behavior: 'smooth', block: 'center' });
-                } else if (result.duplicate) {
-                    alert('⚠️ Already Registered:\n\n' + (result.message || 'You have already submitted an application.') + '\n\nYour Application Reference ID: ' + (result.applicationId ? '#' + result.applicationId : 'Previously Registered'));
-                    submitBtn.disabled = false;
-                    submitBtn.style.opacity = '1';
-                    submitBtn.style.cursor = 'pointer';
-                    submitBtn.innerText = 'SUBMIT APPLICATION';
                 } else {
-                    alert('❌ Submission Error:\n\n' + (result.message || 'Something went wrong while submitting your application. Please try again.'));
+                    if (globalBanner) {
+                        globalBanner.className = 'form-global-banner error';
+                        globalBanner.innerHTML = '❌ <strong>Submission Notice:</strong> ' + (result.message || 'Unable to register your application. Please check your details and try again.');
+                        globalBanner.style.display = 'block';
+                        globalBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
                     submitBtn.disabled = false;
                     submitBtn.style.opacity = '1';
                     submitBtn.style.cursor = 'pointer';
-                    submitBtn.innerText = 'SUBMIT APPLICATION';
+                    submitBtn.innerHTML = '<span>Submit Application</span><span class="btn-arrow">&rarr;</span>';
                 }
             } catch (err) {
                 console.error('Submission network error:', err);
-                alert('⚠️ Connection Error:\n\nUnable to submit your application. Please check your internet connection and try again.');
+                if (globalBanner) {
+                    globalBanner.className = 'form-global-banner error';
+                    globalBanner.innerHTML = '⚠️ <strong>Network Issue:</strong> Unable to connect to the server. Please check your internet connection and try again.';
+                    globalBanner.style.display = 'block';
+                    globalBanner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
                 submitBtn.style.cursor = 'pointer';
-                submitBtn.innerText = 'SUBMIT APPLICATION';
+                submitBtn.innerHTML = '<span>Submit Application</span><span class="btn-arrow">&rarr;</span>';
             }
         }
 
@@ -1227,12 +1648,13 @@
             document.getElementById('recruitmentForm').reset();
             sel = [];
             renderDom();
+            clearAllErrors();
             var submitBtn = document.querySelector('.btn-submit');
             if (submitBtn) {
                 submitBtn.disabled = false;
                 submitBtn.style.opacity = '1';
                 submitBtn.style.cursor = 'pointer';
-                submitBtn.innerText = 'SUBMIT APPLICATION';
+                submitBtn.innerHTML = '<span>Submit Application</span><span class="btn-arrow">&rarr;</span>';
             }
             document.getElementById('successState').style.display = 'none';
             document.querySelector('.form-intro').style.display = 'block';
