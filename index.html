@@ -40,10 +40,10 @@
 
         html {
             background: linear-gradient(180deg,
-                    #1a0030 0%,
-                    #0e0020 35%,
-                    #080012 65%,
-                    #030008 100%);
+                    #0f001c 0%,
+                    #090014 35%,
+                    #05000c 65%,
+                    #020005 100%);
             background-attachment: fixed;
             scroll-behavior: smooth;
         }
@@ -85,10 +85,10 @@
             position: absolute;
             inset: 0;
             background: linear-gradient(180deg,
-                    rgba(64, 0, 96, 0.40) 0%,
-                    rgba(28, 0, 42, 0.65) 35%,
-                    rgba(12, 0, 18, 0.88) 70%,
-                    rgba(4, 0, 6, 0.98) 100%);
+                    rgba(22, 0, 38, 0.78) 0%,
+                    rgba(14, 0, 24, 0.85) 35%,
+                    rgba(8, 0, 14, 0.94) 70%,
+                    rgba(2, 0, 4, 0.99) 100%);
         }
 
         .page-wrapper {
@@ -320,9 +320,9 @@
 
         .pe-label {
             font-family: var(--mono);
-            font-size: 10px;
+            font-size: 12.5px;
             font-weight: 600;
-            letter-spacing: 0.16em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
             color: #b082cc;
             opacity: 1;
@@ -554,13 +554,120 @@
             font-size: 13px;
         }
 
-        .field select {
-            cursor: pointer;
+        /* ── CUSTOM THEMED SELECT DROPDOWN ── */
+        .custom-select-wrapper {
+            position: relative;
+            width: 100%;
         }
 
-        .field select option {
-            background: #181510;
+        .custom-select-trigger {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.25);
+            border: none;
+            border-bottom: 1.5px solid rgba(255, 255, 255, 0.18);
+            padding: 8px 10px 10px;
             color: #ffffff;
+            font-family: var(--sans);
+            font-size: 14.5px;
+            border-radius: 4px 4px 0 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: border-color 0.2s, background 0.2s;
+            user-select: none;
+            outline: none;
+        }
+
+        .custom-select-trigger:focus,
+        .custom-select-wrapper.open .custom-select-trigger {
+            border-bottom-color: var(--red-light);
+            background: rgba(184, 59, 230, 0.09);
+        }
+
+        .field.has-error .custom-select-trigger {
+            border-bottom-color: #f43f5e !important;
+            background: rgba(244, 63, 94, 0.08) !important;
+        }
+
+        .custom-select-trigger span {
+            color: #ffffff;
+        }
+
+        .custom-select-trigger span.placeholder {
+            color: var(--ink-lo);
+            font-style: italic;
+            font-size: 13px;
+        }
+
+        .custom-select-arrow {
+            width: 14px;
+            height: 14px;
+            fill: none;
+            stroke: rgba(255, 255, 255, 0.7);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.25s ease, stroke 0.2s;
+            flex-shrink: 0;
+        }
+
+        .custom-select-wrapper.open .custom-select-arrow {
+            transform: rotate(180deg);
+            stroke: #df84f7;
+        }
+
+        .custom-select-dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            right: 0;
+            background: rgba(18, 0, 30, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(184, 59, 230, 0.35);
+            border-radius: 12px;
+            padding: 6px 0;
+            z-index: 100;
+            box-shadow:
+                0 16px 36px rgba(0, 0, 0, 0.75),
+                0 0 0 1px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-8px) scale(0.98);
+            transition: opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1), transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.2s;
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .custom-select-wrapper.open .custom-select-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        .custom-option {
+            padding: 10px 14px;
+            margin: 3px 6px;
+            border-radius: 8px;
+            font-family: var(--sans);
+            font-size: 13.5px;
+            color: #ebd8f5;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+            user-select: none;
+        }
+
+        .custom-option:hover {
+            background: rgba(184, 59, 230, 0.22);
+            color: #ffffff;
+        }
+
+        .custom-option.selected {
+            background: rgba(184, 59, 230, 0.4);
+            color: #ffffff;
+            font-weight: 600;
         }
 
         .field textarea {
@@ -800,16 +907,17 @@
 
         .query-phone {
             font-family: var(--mono);
-            font-size: 11.5px;
+            font-size: 12px;
             font-weight: 500;
-            color: var(--red);
+            color: #ffffff;
             text-decoration: none;
             letter-spacing: 0.05em;
-            transition: opacity 0.18s;
+            transition: color 0.18s, opacity 0.18s;
         }
 
         .query-phone:hover {
-            opacity: 0.75;
+            color: #df9aff;
+            opacity: 1;
         }
 
         /* ── CONTACT ── */
@@ -1122,7 +1230,6 @@
             <div class="nameplate rev">
                 <div class="nameplate-meta">
                     <span class="nameplate-meta-left">Alumni Cell &bull; KJSSE</span>
-                    <span class="nameplate-meta-right">Applications Open &bull; 2026&ndash;27</span>
                 </div>
                 <div class="nameplate-title">
                     Recruiting <span>FY Reps</span>
@@ -1151,7 +1258,7 @@
                         <span class="pe-num">1</span>
                         <div class="pe-body">
                             <span class="pe-label">Network</span>
-                            <span class="pe-title">People you&rsquo;d never meet otherwise</span>
+                            <span class="pe-title">Networks you won&rsquo;t find anywhere else</span>
                             <p class="pe-desc">Direct face-to-face connects with founders and alumni leaders.</p>
                         </div>
                     </div>
@@ -1232,18 +1339,37 @@
                         </div>
                         <div class="field rev" id="field-branch">
                             <label>Branch <span class="req">*</span></label>
-                            <select id="branch" name="branch">
-                                <option value="" disabled selected>Select branch...</option>
-                                <option value="Computer Engineering">Computer Engineering</option>
-                                <option value="Information Technology">Information Technology</option>
-                                <option value="Artificial Intelligence & Data Science">Artificial Intelligence &amp;
-                                    Data Science</option>
-                                <option value="Electronics & Telecommunication">Electronics &amp; Telecommunication
-                                </option>
-                                <option value="Mechanical Engineering">Mechanical Engineering</option>
-                                <option value="Robotics & Artificial Intelligence">Robotics &amp; Artificial
-                                    Intelligence</option>
-                            </select>
+                            <div class="custom-select-wrapper" id="customBranchWrapper">
+                                <div class="custom-select-trigger" id="customBranchTrigger" tabindex="0">
+                                    <span id="customBranchLabel" class="placeholder">Select branch...</span>
+                                    <svg class="custom-select-arrow" viewBox="0 0 24 24">
+                                        <polyline points="6 9 12 15 18 9"></polyline>
+                                    </svg>
+                                </div>
+                                <div class="custom-select-dropdown" id="customBranchDropdown">
+                                    <div class="custom-option" data-value="COMPS">COMPS</div>
+                                    <div class="custom-option" data-value="AIDS">AIDS</div>
+                                    <div class="custom-option" data-value="CCE">CCE</div>
+                                    <div class="custom-option" data-value="CSBS">CSBS</div>
+                                    <div class="custom-option" data-value="RAI">RAI</div>
+                                    <div class="custom-option" data-value="VLSI">VLSI</div>
+                                    <div class="custom-option" data-value="MECH">MECH</div>
+                                    <div class="custom-option" data-value="EXTC">EXTC</div>
+                                    <div class="custom-option" data-value="CIVIL">CIVIL</div>
+                                </div>
+                                <select id="branch" name="branch" style="display: none;">
+                                    <option value="" disabled selected>Select branch...</option>
+                                    <option value="COMPS">COMPS</option>
+                                    <option value="AIDS">AIDS</option>
+                                    <option value="CCE">CCE</option>
+                                    <option value="CSBS">CSBS</option>
+                                    <option value="RAI">RAI</option>
+                                    <option value="VLSI">VLSI</option>
+                                    <option value="MECH">MECH</option>
+                                    <option value="EXTC">EXTC</option>
+                                    <option value="CIVIL">CIVIL</option>
+                                </select>
+                            </div>
                             <span class="field-error-text" id="err-branch">Please select your branch.</span>
                         </div>
                     </div>
@@ -1738,10 +1864,76 @@
                 submitBtn.innerHTML = '<span>Submit Application</span><span class="btn-arrow">&rarr;</span>';
             }
             document.getElementById('successState').style.display = 'none';
-            document.querySelector('.form-intro').style.display = 'block';
+            var formIntro = document.querySelector('.form-intro');
+            if (formIntro) formIntro.style.display = 'block';
             document.getElementById('recruitmentForm').style.display = 'block';
-            document.querySelector('.form-intro').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            var customBranchLbl = document.getElementById('customBranchLabel');
+            if (customBranchLbl) {
+                customBranchLbl.innerText = 'Select branch...';
+                customBranchLbl.classList.add('placeholder');
+            }
+            document.querySelectorAll('.custom-option').forEach(function (o) { o.classList.remove('selected'); });
+            document.getElementById('recruitmentForm').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
+
+        // Custom Branch Dropdown Interactive Controller
+        (function initCustomBranch() {
+            var branchWrapper = document.getElementById('customBranchWrapper');
+            var branchTrigger = document.getElementById('customBranchTrigger');
+            var branchLabel = document.getElementById('customBranchLabel');
+            var nativeBranch = document.getElementById('branch');
+            var customOptions = document.querySelectorAll('.custom-option');
+
+            if (branchTrigger && branchWrapper) {
+                branchTrigger.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    branchWrapper.classList.toggle('open');
+                });
+
+                branchTrigger.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        branchWrapper.classList.toggle('open');
+                    } else if (e.key === 'Escape') {
+                        branchWrapper.classList.remove('open');
+                    }
+                });
+
+                customOptions.forEach(function (opt) {
+                    opt.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        var val = opt.getAttribute('data-value');
+                        var txt = opt.innerText;
+
+                        // Sync with hidden native select
+                        nativeBranch.value = val;
+                        nativeBranch.dispatchEvent(new Event('change', { bubbles: true }));
+                        nativeBranch.dispatchEvent(new Event('input', { bubbles: true }));
+
+                        // Update label
+                        branchLabel.innerText = txt;
+                        branchLabel.classList.remove('placeholder');
+
+                        // Update selected state
+                        customOptions.forEach(function (o) { o.classList.remove('selected'); });
+                        opt.classList.add('selected');
+
+                        // Close dropdown
+                        branchWrapper.classList.remove('open');
+
+                        // Clear error state
+                        var fieldWrapper = document.getElementById('field-branch');
+                        if (fieldWrapper) fieldWrapper.classList.remove('has-error');
+                    });
+                });
+
+                document.addEventListener('click', function (e) {
+                    if (!branchWrapper.contains(e.target)) {
+                        branchWrapper.classList.remove('open');
+                    }
+                });
+            }
+        })();
     </script>
 </body>
 
