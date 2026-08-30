@@ -1653,7 +1653,8 @@
 
                     // Switch view to confirmation screen
                     document.getElementById('recruitmentForm').style.display = 'none';
-                    document.querySelector('.form-intro').style.display = 'none';
+                    var formIntro = document.querySelector('.form-intro');
+                    if (formIntro) formIntro.style.display = 'none';
                     document.getElementById('successState').style.display = 'block';
 
                     // Smooth scroll into confirmation
