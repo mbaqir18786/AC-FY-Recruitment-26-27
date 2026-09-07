@@ -1422,11 +1422,6 @@
                         </div>
                     </div>
 
-                    <div class="field rev">
-                        <label>GitHub / Portfolio URL <span class="opt">(Optional)</span></label>
-                        <input type="url" id="githubUrl" name="githubUrl" placeholder="https://github.com/you">
-                    </div>
-
                     <div class="field rev" id="field-resumeLink">
                         <label>Resume (Drive Link) <span class="req">*</span></label>
                         <input type="url" id="resumeLink" name="resumeLink" placeholder="https://drive.google.com/...">
@@ -1669,7 +1664,6 @@
             var branchSelect = document.getElementById('branch');
             var branchVal = branchSelect.value;
             var branchText = branchSelect.options[branchSelect.selectedIndex].text;
-            var githubUrl = document.getElementById('githubUrl').value.trim();
             var resumeLink = document.getElementById('resumeLink').value.trim();
             var motivation = document.getElementById('motivation').value.trim();
             var globalBanner = document.getElementById('formGlobalBanner');
@@ -1783,7 +1777,7 @@
                 branch: branchText,
                 domain1: sel[0],
                 domain2: sel[1],
-                githubUrl: githubUrl || "N/A",
+                githubUrl: "N/A",
                 resumeLink: resumeLink,
                 motivation: motivation
             };
